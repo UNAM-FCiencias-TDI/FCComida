@@ -21,13 +21,15 @@ Instalación
 Configuración de la base de datos (PostgreSQL)
 
 .. code:: bash
-
-    (fcsocial_dev)$ python manage.py migrate
-    (fcsocial_dev)$ python manage.py createsuperuser
+	
+	(FCComida)$ sudo -u postgres createuser -W FCComida
+	(FCComida)$ sudo -u postgrescreatedb FCComida -O FCComida
+    (FCComida)$ python manage.py migrate
+    (FCComida)$ python manage.py createsuperuser
 
 Ejecución
 ---------
 
 .. code:: bash
 
-    (fcsocial_dev)$ python manage.py runserver
+    (FCComida)$ python manage.py runserver
