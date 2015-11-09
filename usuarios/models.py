@@ -45,3 +45,4 @@ class Calificacion(models.Model):
 	calificacion = models.IntegerField()
 	comercioId = models.ForeignKey('Comercio')
 	usuarioId = models.ForeignKey('Usuario')
+	
