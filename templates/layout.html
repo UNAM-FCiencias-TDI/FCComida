@@ -1,0 +1,26 @@
+{% load static from staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'templates/css/barratop.css' %}" >
+  </head>
+
+  <body>
+    <div class="header">
+          <ul class="nav">
+            <li class="actual"><a href="{% url 'views.inicio' %}">Sección actual</a></li>
+            <li><a href="sec1.html">Sección1</a></li>
+            <li><a href="sec2.html">Sección2</a></li>
+          <ul class="texto">
+            <input type="text" placeholder="usuario"> </input>
+            <input type="text" placeholder="password"> </input>
+          </ul>
+          </ul>
+        </div>
+    </div>
+      <div>
+        {% block content %}{% endblock %}
+      </div>
+  </body>
+</html>
