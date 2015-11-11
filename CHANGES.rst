@@ -13,7 +13,7 @@ Changelog
 - Se crea el modelo para comercios
   [clapas]
 
- - Se crea pagina de inicio temporal
+- Se crea pagina de inicio temporal
   [moi5] 
 
 - Se crea el modelo para usuarios
