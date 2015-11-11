@@ -1,0 +1,53 @@
+<head>
+<style type="text/css">
+    body{
+        margin:0px;
+    }
+.texto{
+    display: inline-block;
+  }
+.header {
+  position: fixed;
+  right: 0;/*el bloque esta de derecha a izq*/
+  left: 0;
+  top: 0;/*hasta arriba*/
+  border-width: 0 0 1px;
+  background-color: #000;/*color bloque*/
+}
+@media (min-width: 768px) {/*en bloque*/
+  .nav {
+    float: left;
+    margin: 0;
+  }
+  .nav > li {
+    float: left;
+  }
+  .nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.header .nav > li > a {/*letra link*/
+  color: #999;
+}
+.header .nav > li > a:hover {/*letra link cursor*/
+  color: #5bc7f5;
+  background-color: transparent;
+}
+.header .nav > .actual > a,/*letra actial*/
+.header .nav > .actual > a:focus {/*letra actial cursor*/
+  color: #fff;
+  background-color: #1B67A5;
+}
+.nav {/*pegado a la izq*/
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav > li > a {/*medidas*/
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+</style>
+</head>
