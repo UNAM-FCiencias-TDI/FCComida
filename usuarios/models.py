@@ -10,3 +10,6 @@ class Usuario(models.Model):
 	correo = models.EmailField(max_length=100)
 	nombreUsuario = models.CharField(max_length=100)
 	clss = models.BooleanField()
+
+	def __str__(self):
+		return str(self.id) + "app: " + self.apellidoP + "apm: " self.apellidoM + "nombre: " + self.nombre 
