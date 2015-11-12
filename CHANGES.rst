@@ -12,6 +12,9 @@ Changelog
 
 - Se crea el modelo para comercios
   [clapas]
+  
+- Primera "prueba"
+  [moi5] 
 
 - Se crea pagina de inicio temporal
   [moi5] 
@@ -21,3 +24,6 @@ Changelog
 
 - Se crean los modelos para comentarios y calificación
   [jealuna]
+  
+- Se actualiza página de inicio temporal
+  [moi5] 
