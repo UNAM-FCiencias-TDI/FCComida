@@ -5,25 +5,22 @@ python:
 
 services: postgresql
 
-env:
-  - DJANGO=1.4.1
-
 install:
  - pip install -r requirements.txt
  - pip install coverage
  
 before_script:
- - "export DISPLAY=:99.0"
+ - "export DISPLAY=:99.0" #xvfb para pruebas con GUI
  - "sh -e /etc/init.d/xvfb start"
  - sleep 3 # give xvfb some time to start
- - psql -c "CREATE DATABASE travisci;" -U postgres
+ - psql -c "CREATE DATABASE travisci;" -U postgres #config puesta en settings
  - python manage.py migrate
  - python manage.py runserver &
 
 script:
  -  coverage run manage.py test
  -  python functional_tests/fccomida_test.py
- -  sleep 10
+ -  sleep 6 # por que odias mis pruebas señor?
 
 after_script:
  - pip install -q coveralls
