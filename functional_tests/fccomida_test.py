@@ -15,7 +15,7 @@ class NewVisitorTest(unittest.TestCase):
     def test_can_add_a_track(self):
         # Alicia visita la aplciación
         self.browser.get('http://localhost:8000')
-        self.assertIn('Django', self.browser.title)
+        self.assertIn('Hola-FCComida', self.browser.title)
 
 
 if __name__ == '__main__':
