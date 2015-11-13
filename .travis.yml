@@ -20,7 +20,6 @@ before_script:
 script:
  -  coverage run manage.py test
  -  python functional_tests/fccomida_test.py
-  - sleep 5
 
 after_script:
  - pip install -q coveralls
