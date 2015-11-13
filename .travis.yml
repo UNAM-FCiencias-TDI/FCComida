@@ -11,9 +11,14 @@ env:
 install:
  - pip install -r requirements.txt
  - pip install coverage
+ 
+before_script:
+ - python manage.py runserver
+ - sleep 3
 
 script:
  -  coverage run manage.py test
+ -  python functional_tests/fccomida_test.py
 
 after_script:
  - pip install -q coveralls
