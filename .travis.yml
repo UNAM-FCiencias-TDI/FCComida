@@ -20,7 +20,7 @@ before_script:
 script:
  -  coverage run manage.py test
  -  python functional_tests/fccomida_test.py
- -  sleep 6 # por que odias mis pruebas señor?
+# por que odias mis pruebas señor?
 
 after_script:
  - pip install -q coveralls
