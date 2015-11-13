@@ -9,9 +9,6 @@ class NewVisitorTest(unittest.TestCase):
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(3)
 
-    def tearDown(self):
-        self.browser.quit()
-
     def test_can_add_a_track(self):
         # Alicia visita la aplciación
         self.browser.get('http://localhost:8000')
