@@ -18,5 +18,8 @@ from django.contrib import admin
 from . import views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.inicio)
+    url(r'^$', views.inicio),
+    url(r'^register/$', 'perfiles.views.register', name='register'),
+    url(r'^login/$', 'perfiles.views.user_login', name='login'),
+    url(r'^logout/$', 'perfiles.views.user_logout', name='logout'),
 ]

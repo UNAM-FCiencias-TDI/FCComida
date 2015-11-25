@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block content %}
+
+    <body>
+        <h1>Login</h1>
+
+        <form id="login_form" method="post" action="/login/">
+            {% csrf_token %}
+            Nombre de usuario: <input type="text" name="username" value="" size="50" />
+            <br />
+            Contraseña: <input type="password" name="password" value="" size="50" />
+            <br />
+            <button type="submit" class="btn btn-success" value="succes">Ingresar</button>
+
+        </form>
+
+    </body>
+</html>
+{% endblock %}
