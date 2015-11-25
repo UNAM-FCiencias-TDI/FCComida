@@ -37,19 +37,30 @@
           <a class="navbar-brand" href="#">FCComida</a>
         </div>
         <!-- Campo para login-->
-        {% block login %}
+        {% if user.is_authenticated %}
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
+          <form class="navbar-form navbar-right" role="form" action="/logout/">
+            <button type="submit" class="btn btn-danger">Salir</button>
+          </form> 
+        </div>
+        {% else %}
+        {% block login %}
+                    
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form" action="/login/" method="post">
+            {% csrf_token %}
             <div class="form-group">
-              <input type="text" placeholder="User name" class="form-control">
+              <input type="text" placeholder="User name" name="username" class="form-control">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="Password" name="password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">ingresar</button>
+            <button type="submit" class="btn btn-success">Ingresar</button>
           </form> 
         </div><!--/.navbar-collapse -->
         {% endblock %}
+        {% endif %}
       </div>
     </nav>
 
