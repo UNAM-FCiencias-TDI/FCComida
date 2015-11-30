@@ -18,11 +18,45 @@
                  (<p>) element. This ensures each element appears on a new line,
                  making everything look neater. -->
             <div class="form-group">
-            {{ user_form.as_p }}
-            {{ profile_form.as_p }}
+            <!--{{ user_form.as_p }}
+            {{ profile_form.as_p }}-->
+
+                {{ user_form.non_field_errors }}
+                <div class="fieldWrapper">
+                    {{ user_form.username.errors }}
+                    <label for="{{ user_form.username.id_for_label }}">Nombre de usuario:</label><br>
+                    {{ user_form.username }}
+                </div>
+                
+                <div class="fieldWrapper">
+                    {{ user_form.password.errors }}
+                    <label for="{{ user_form.password.id_for_label }}">Contraseña:</label><br>
+                    {{ user_form.password }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ user_form.password2.errors }}
+                    <label for="{{ user_form.password2.id_for_label }}">Confirmar contraseña:</label><br>
+                    {{ user_form.password2 }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ user_form.email.errors }}
+                    <label for="{{ user_form.email.id_for_label }}">Correo electrónico:</label><br>
+                    {{ user_form.email }}
+                </div>
+                {{ profile_form.non_field_errors}}
+                <div class="fileWrapper">
+                    {{ profile_form.facultad.errors}}
+                    <label for="{{ profile_form.facultad.id_for_label}}">Facultad:</label><br>
+                    {{ profile_form.facultad }}
+                </div>
+                <div class="fileWrapper">
+                    {{ profile_form.picture.errors}}
+                    <label for="{{ profile_form.picture.id_for_label}}">Foto:</label><br>
+                    {{ profile_form.picture }}
+                </div>
             </div>
-            <button type="submit" name="submit" value="Register" class="btn btn-success">Ingresar</button>
-        </form>
-        {% endif %}
+                <button type="submit" name="submit" value="Register" class="btn btn-success">Ingresar</button>
+            </form>
+            {% endif %}
     </body>
 {% endblock %}
