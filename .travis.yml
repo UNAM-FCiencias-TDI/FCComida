@@ -21,7 +21,7 @@ before_script:
 script:
  -  coverage run manage.py test
  -  python functional_tests/fccomida_test.py
-# por qué odias mis pruebas señor?
+ -  python functional_tests/registro.py
 
 after_script:
  - coveralls
