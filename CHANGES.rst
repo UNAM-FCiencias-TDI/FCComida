@@ -27,3 +27,15 @@ Changelog
   
 - Se actualiza página de inicio temporal
   [moi5] 
+  
+- Registro de usuarios
+  [jealuna] 
+  
+- Validaciones para registro de usuarios
+  [mike-gaspar]
+  
+- Registro de comercios
+  [clapas]
+  
+- Se muestran comercios registrados en pagina de inicio
+  [jealuna]
