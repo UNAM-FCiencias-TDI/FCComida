@@ -1,6 +1,28 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block content %}
+<div class="jumbotron">
+      <div class="container">
+        <h1>FCComida h1</h1>
+      </div>
+</div>
+{% if Comercios %}
+  {% for comercio in Comercios %}
+  <div class="container">
+    <!-- Mostramos los comercios -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>{{ comercio.nombre }}</h2>
+        <p>{{ comercio.descripcion }}</p>
+        <p> {{comercio.foto}} </p>
+        <img src="{{comercio.foto}}"/>
+        <p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+{% else %}
     <div class="jumbotron">
       <div class="container">
         <h1>FCComida h1</h1>
@@ -46,4 +68,5 @@ pena de día y recrear su dolor de noche.”<br>
           <p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>
         </div>
       </div>
+{% endif %}
 {% endblock %}
