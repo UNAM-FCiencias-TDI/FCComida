@@ -2,44 +2,70 @@
 {% load staticfiles %}
 {% block content %}
 
-	<h1>Registra tu comercio!!!</h1>
+<h1>Registra tu comercio!!!</h1>
 
-	<form id="comercio_form" method="post" name="comercio_form" enctype="multipart/form-data">
-		{% csrf_token %}
+<form id="comercio_form" method="post" name="comercio_form" enctype="multipart/form-data">
+	{% csrf_token %}
 
-		<div class = "form-group">
-		<label for="{{ form.clave.id_for_label }}">Clave de registro</label>
+	<div class = "form-group">
+		{{ form.non_field_errors }}
+
+		<div class = "fieldWrapper">
+			{{ form.clave.errors }}
+			<label for="{{ form.clave.id_for_label }}">Clave de registro</label>
 			{{form.clave}}
-
-			<label for="{{ form.nombre.id_for_label }}">Nombre</label>
-			{{form.nombre}}
-
-			<label for="{{ form.facultad.id_for_label }}">Facultad</label>
-			{{form.facultad}}
-
-			<label for="{{ form.comedor.id_for_label }}">¿Cuenta con comedor?</label>
-			{{form.comedor}}			
-
-			<label for="{{ form.mayor_precio.id_for_label }}">Mayor Precio</label>
-			{{form.mayor_precio}}
-
-			<label for="{{ form.menor_precio.id_for_label }}">Menor Precio</label>
-			{{form.menor_precio}}
-
-			<label for="{{ form.foto.id_for_label}}">Foto</label>
-      {{ form.foto }}
-
-      <label for="{{ form.descripcion.id_for_label}}">Descripción</label>
-      {{ form.descripcion }}
-
-		</div> <!-- form-group -->
-
-		<div class="reg-buttons">
-			<button type = "reset" name="cancelar" id="cancelar" class="btn btn-warning">Cancelar</button>
-			<button type = "submit" name="aceptar" id="aceptar" class="btn btn-success">Registrar</button>
-			<!-- <input type="submit" value="Resgistrar" class="submit"> -->
 		</div>
 
-	</form>
+		<div class = "fieldWrapper">
+			{{ form.nombre.errors }}
+			<label for="{{ form.nombre.id_for_label }}">Nombre</label>
+			{{form.nombre}}
+		</div>
+
+		<div class = "fieldWrapper">
+			{{ form.facultad.errors }}
+			<label for="{{ form.facultad.id_for_label }}">Facultad</label>
+			{{form.facultad}}
+		</div>
+
+		<div class = "fieldWrapper">
+			{{ form.comedor.errors }}
+			<label for="{{ form.comedor.id_for_label }}">¿Cuenta con comedor?</label>
+			{{form.comedor}}
+		</div>
+
+		<div class = "fieldWrapper">
+			{{ form.mayor_precio.errors }}
+			<label for="{{ form.mayor_precio.id_for_label }}">Mayor Precio</label>
+			{{form.mayor_precio}}
+		</div>
+
+		<div class = "fieldWrapper">
+			{{ form.menor_precio.errors }}
+			<label for="{{ form.menor_precio.id_for_label }}">Menor Precio</label>
+			{{form.menor_precio}}
+		</div>
+
+		<div class = "fieldWrapper">
+			{{ form.foto.errors }}
+			<label for="{{ form.foto.id_for_label}}">Foto</label>
+			{{ form.foto }}
+		</div>
+
+		<div class = "fieldWrapper">
+			{{ form.descripcion.errors }}
+			<label for="{{ form.descripcion.id_for_label}}">Descripción</label>
+			{{ form.descripcion }}
+		</div>
+
+	</div> <!-- form-group -->
+
+	<div class="reg-buttons">
+		<button type = "reset" name="cancelar" id="cancelar" class="btn btn-warning">Cancelar</button>
+		<button type = "submit" name="aceptar" id="aceptar" class="btn btn-success">Registrar</button>
+		<!-- <input type="submit" value="Resgistrar" class="submit"> -->
+	</div>
+
+</form>
 
 {% endblock %}
