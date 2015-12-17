@@ -2,8 +2,8 @@
 {
 jQuery.validator.addMethod("letrasusr", function(value, element) 
 {
-return this.optional(element) || /^[a-z,"_","@","-",".","+"]+$/i.test(value);
-}, "Letters and spaces only please"); 
+return this.optional(element) || /^[a-z,0-9,"_","@","-",".","+"]+$/i.test(value);
+}, "alfanumerico y _@-.+"); 
     var VALIDA = {};
 
     VALIDA.UTIL =
