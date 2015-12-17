@@ -16,7 +16,7 @@ return this.optional(element) || /^[a-z,0-9,_,@,-,.,+]+$/i.test(value);
                     username: {
                         required: true,
                         minlength: 3,
-			                  letrasusr: true
+                        letrasusr: true
                     },
 
                     email: {
@@ -36,7 +36,7 @@ return this.optional(element) || /^[a-z,0-9,_,@,-,.,+]+$/i.test(value);
                     username: {
                         required: "pon tu usuario",
                         minlength: "almenos de 3 caracteres",
-			                  letrasusr: "alfanumerico y _@.+"
+                        letrasusr: "alfanumerico y _@.+"
                     },
                     password: {
                         required: "pon tu password",
@@ -59,7 +59,7 @@ return this.optional(element) || /^[a-z,0-9,_,@,-,.,+]+$/i.test(value);
                     username: {
                         required: true,
                         minlength: 3,
-			                  letrasusr: true
+                        letrasusr: true
                     }
 
                 },
@@ -67,11 +67,33 @@ return this.optional(element) || /^[a-z,0-9,_,@,-,.,+]+$/i.test(value);
                     username: {
                         required: "pon tu usuario",
                         minlength: "almenos de 3 caracteres",
-			                  letrasusr: "alfanumerico y _@.+"
+                        letrasusr: "alfanumerico y _@.+"
                     }
                 },
 
 		errorElement: "div",
+
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });
+
+            $("#login_form").validate({
+                rules: {
+                    username: {
+                        required: true,
+                        minlength: 3,
+                        letrasusr: true
+                    }
+
+                },
+                messages: {
+                    username: {
+                        required: "pon tu usuario",
+                        minlength: "almenos de 3 caracteres",
+                        letrasusr: "alfanumerico y _@.+"
+                    }
+                },
 
                 submitHandler: function(form) {
                     form.submit();
