@@ -2,7 +2,7 @@
 {
 jQuery.validator.addMethod("letrasusr", function(value, element) 
 {
-return this.optional(element) || /^[a-z,0-9,"_","@","-",".","+"]+$/i.test(value);
+return this.optional(element) || /^[a-z,0-9,_,@,-,.,+]+$/i.test(value);
 }, "alfanumerico y _@-.+"); 
     var VALIDA = {};
 
@@ -16,7 +16,7 @@ return this.optional(element) || /^[a-z,0-9,"_","@","-",".","+"]+$/i.test(value)
                     username: {
                         required: true,
                         minlength: 3,
-			letrasusr: true
+			                  letrasusr: true
                     },
 
                     email: {
@@ -36,7 +36,7 @@ return this.optional(element) || /^[a-z,0-9,"_","@","-",".","+"]+$/i.test(value)
                     username: {
                         required: "pon tu usuario",
                         minlength: "almenos de 3 caracteres",
-			letrasusr: "caracteres normales y _@-.+"
+			                  letrasusr: "alfanumerico y _@.+"
                     },
                     password: {
                         required: "pon tu password",
@@ -53,6 +53,31 @@ return this.optional(element) || /^[a-z,0-9,"_","@","-",".","+"]+$/i.test(value)
                     form.submit();
                 }
             });
+
+            $("#login_form_bootstrap").validate({
+                rules: {
+                    username: {
+                        required: true,
+                        minlength: 3,
+			                  letrasusr: true
+                    }
+
+                },
+                messages: {
+                    username: {
+                        required: "pon tu usuario",
+                        minlength: "almenos de 3 caracteres",
+			                  letrasusr: "alfanumerico y _@.+"
+                    }
+                },
+
+		errorElement: "div",
+
+                submitHandler: function(form) {
+                    form.submit();
+                }
+            });
+
         }
     }
 
