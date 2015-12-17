@@ -9,7 +9,7 @@
 
             $("#user_form").validate({
                 rules: {
-                    usuario: {
+                    username: {
                         required: true,
                         minlength: 3
                     },
@@ -28,7 +28,7 @@
                     }
                 },
                 messages: {
-                    usuario: {
+                    username: {
                         required: "pon tu usuario",
                         minlength: "almenos de 3 caracteres"
                     },
