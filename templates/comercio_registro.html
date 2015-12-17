@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
+<script src="{% static 'templates/js/vendor/jquery-1.11.2.min.js' %}"></script>
+<script src="{% static 'templates/js/mapa.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+<style>
+    #mapa {
+        width: 500px;
+        height: 400px;
+    }
+</style>
+
 
 <h1>Registra tu comercio!!!</h1>
 
@@ -57,6 +67,18 @@
 			<label for="{{ form.descripcion.id_for_label}}">Descripción</label>
 			{{ form.descripcion }}
 		</div>
+		<p><b>Coloca el marcador en la posicion del comercio</b></p>
+		<div class = "fieldWrapper">
+			{{ form.latitud.errors }}
+			<label for="{{ form.latitud.id_for_label }}">Latitud</label>
+			{{form.latitud}}
+		</div>
+		<div class = "fieldWrapper">
+			{{ form.longitud.errors }}
+			<label for="{{ form.longitud.id_for_label }}">Longitud</label>
+			{{form.longitud}}
+		</div>
+		<div id="mapa"></div>
 
 	</div> <!-- form-group -->
 
@@ -67,5 +89,4 @@
 	</div>
 
 </form>
-
 {% endblock %}
