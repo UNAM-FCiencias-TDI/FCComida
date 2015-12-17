@@ -4,13 +4,6 @@
 <script src="{% static 'templates/js/vendor/jquery-1.11.2.min.js' %}"></script>
 <script src="{% static 'templates/js/mapa.js' %}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
-<style>
-    #mapa {
-        width: 500px;
-        height: 400px;
-    }
-</style>
-
 
 <h1>Registra tu comercio!!!</h1>
 
@@ -78,7 +71,7 @@
 			<label for="{{ form.longitud.id_for_label }}">Longitud</label>
 			{{form.longitud}}
 		</div>
-		<div id="mapa"></div>
+		<div id="mapa" class="mapa"></div>
 
 	</div> <!-- form-group -->
 
