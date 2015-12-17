@@ -37,11 +37,11 @@ class Comercio(models.Model):
 
 	# ubicacion para maps
 	latitud = models.DecimalField(
-		max_digits=5, decimal_places=3, default=0.0,
+		max_digits=30, decimal_places=15, default = 19.3234728,
 		validators=[MaxValueValidator(90.0),MinValueValidator(-90.0)]
 		)
 	longitud = models.DecimalField(
-		max_digits=5, decimal_places=3, default=0.0,
+		max_digits=30, decimal_places=15, default=-99.1814817,
 		validators=[MaxValueValidator(180.0),MinValueValidator(-180.0)]
 		)
 	

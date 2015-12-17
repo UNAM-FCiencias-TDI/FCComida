@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block content %}
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="{% static 'templates/js/muestra_mapa.js' %}"></script>
 <div class="jumbotron">
       <div class="container">
         <h1>FCComida h1</h1>
@@ -14,8 +16,19 @@
       <div class="col-md-4">
         <h2>{{ comercio.nombre }}</h2>
         <p>{{ comercio.descripcion }}</p>
-        <p> {{comercio.foto}} </p>
-        <img src="static/{{comercio.foto}}"/>
+
+        <img src="static/{{comercio.foto}}" width="540" height="400"/>
+        
+        <div id="{{comercio.id}}" class="mapa"></div>
+        <script>
+          var lat = {{comercio.latitud}}
+          var lng = {{comercio.longitud}}
+          var id = {{comercio.id}}
+          var nombre= "{{comercio.nombre}}"
+          initialize(lat,lng,id,nombre)
+          google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        
         <p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>
       </div>
     </div>
