@@ -93,9 +93,9 @@ def user_login(request):
                 # We'll send the user back to the homepage.
                 login(request, user)
                 csrfContext = RequestContext(request)
-                return render_to_response('home.html', csrfContext)
+                #return render_to_response('home.html', csrfContext)
 
-                #return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/')
             else:
                 # An inactive account was used - no logging in!
                 return HttpResponse("Your Rango account is disabled.")
