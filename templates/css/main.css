@@ -1,22 +1,15 @@
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+div.error {
+	position:absolute;
+        margin-top:-21px;
+	margin-left:150px;
+	border:2px solid #C0C097;
+        background-color:#fff;
+        color:white;
+        padding:3px;
+        text-align:left;
+        z-index:1;
+        color:#333333;
+	font:100% arial,helvetica,clean,sans-serif;
+	font-size:15px;
+	font-weight:bold;  
+    }
