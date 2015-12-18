@@ -33,9 +33,15 @@ Changelog
   
 - Validaciones para registro de usuarios
   [mike-gaspar]
+
+- Prueba registro
+  [moi5] 
   
 - Registro de comercios
   [clapas]
   
 - Se muestran comercios registrados en pagina de inicio
   [jealuna]
+
+- Validaciones y unas correciones
+  [moi5]
