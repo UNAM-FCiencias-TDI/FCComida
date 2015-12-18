@@ -4,21 +4,20 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 <script src="{% static 'templates/js/val.js' %}"></script>
-    <body>
+<h1>Login</h1>
 <center>
-        <h1>Login</h1>
-
         <form id="login_form" novalidate="novalidate" class="form-container" method="post" action="/login/">
-	<div class="form-content form-title">
+			<div class="form-title"><h3>Inicio de sesión en FCComida</h3></div>
             {% csrf_token %}
-            Nombre de usuario: <input type="text" name="username" value="" size="40" />
+            <label>Nombre de usuario: </label>
+            <br />
+            <input type="text" name="username" value="" size="35" />
             <br/>
-            Contraseña: <input type="password" name="password" value="" size="40" />
+            <label>Contraseña: </label>
+            <br />
+            <input type="password" name="password" value="" size="35" />
             <br/>
             <button type="submit" class="btn btn-success" value="succes">Ingresar</button>
-	</div>
         </form>
 </center>
-    </body>
-</html>
 {% endblock %}
