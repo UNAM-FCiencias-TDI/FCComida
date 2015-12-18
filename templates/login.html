@@ -4,17 +4,22 @@
 
     <body>
         <h1>Login</h1>
-
-        <form id="login_form" method="post" action="/login/">
+        <center>
+        <form id="login_form" method="post" action="/login/" class="form-container">
             {% csrf_token %}
-            Nombre de usuario: <input type="text" name="username" value="" size="50" />
+            
+            <div class="form-title"><h2>Inicio de sesión en FCComida</h2></div>
+            <label>Nombre de usuario:</label> 
+            <input type="text" name="username" value="" size="35" />
             <br />
-            Contraseña: <input type="password" name="password" value="" size="50" />
+            <label>Contraseña:</label>
+            <input type="password" name="password" value="" size="35" />
+            <br />
             <br />
             <button type="submit" class="btn btn-success" value="succes">Ingresar</button>
 
         </form>
-
+        </center>
     </body>
 </html>
 {% endblock %}
