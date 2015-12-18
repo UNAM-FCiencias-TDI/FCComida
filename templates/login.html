@@ -1,23 +1,24 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block content %}
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+<script src="{% static 'templates/js/val.js' %}"></script>
     <body>
+<center>
         <h1>Login</h1>
         <center>
-        <form id="login_form" method="post" action="/login/" class="form-container">
+        <form id="login_form" novalidate="novalidate" class="form-container" method="post" action="/login/">
+			<div class="form-title"><h2>Inicio de sesión en FCComida</h2></div>
             {% csrf_token %}
-            
-            <div class="form-title"><h2>Inicio de sesión en FCComida</h2></div>
-            <label>Nombre de usuario:</label> 
+            <label>Nombre de usuario: </label>
             <input type="text" name="username" value="" size="35" />
-            <br />
-            <label>Contraseña:</label>
+            <br/>
+            <label>Contraseña: </label>
             <input type="password" name="password" value="" size="35" />
-            <br />
-            <br />
+            <br/>
             <button type="submit" class="btn btn-success" value="succes">Ingresar</button>
-
+	</div>
         </form>
         </center>
     </body>

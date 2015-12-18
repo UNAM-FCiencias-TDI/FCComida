@@ -5,12 +5,12 @@
 <script src="{% static 'templates/js/mapa.js' %}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 
-<h1>Registra tu comercio!!!</h1>
-
-<form id="comercio_form" method="post" name="comercio_form" enctype="multipart/form-data">
+<center>
+<h1>Registra tu comercio</h1>
+<form id="comercio_form" class="form-container" method="post" name="comercio_form" enctype="multipart/form-data">
 	{% csrf_token %}
 
-	<div class = "form-group">
+	<div class = "form-group form-title">
 		{{ form.non_field_errors }}
 
 		<div class = "fieldWrapper">
@@ -82,4 +82,5 @@
 	</div>
 
 </form>
+</center>
 {% endblock %}
