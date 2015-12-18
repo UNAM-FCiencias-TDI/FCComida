@@ -1,4 +1,15 @@
-div.error {
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   /*Definimos las dimensiones de los mapas, afecta a la pagina principal y a la de 
+    registro de comercios, para alterar la de registro usar el id #mapa*/
+    .mapa {
+        width: 500px;
+        height: 400px;
+    }
+
+    div.error {
 	position:absolute;
         margin-top:-21px;
 	margin-left:150px;
@@ -13,3 +24,4 @@ div.error {
 	font-size:15px;
 	font-weight:bold;  
     }
+    
