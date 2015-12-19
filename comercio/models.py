@@ -1,11 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class Comercio(models.Model):
 	
 	#id  - ya la tiene por default, va tomando el mayor + 1 -es unica-
-	clave = models.CharField(max_length=100 ,default='') # clave de registro
 	nombre = models.CharField(max_length=50 ,default='')
 
 	FACULTADES = (
@@ -50,9 +50,9 @@ class Comercio(models.Model):
 	menor_precio = models.FloatField(default=0.5, validators=[MinValueValidator(0.5)])
 	
 	descripcion = models.CharField(max_length=200, default='') # descripcion sobre el comercio
-
-
-
+	#Se agrega el usuario y la fecha en la que lo registro
+	fecha = models.DateTimeField(auto_now_add = True)
+	#user = models.ForeignKey(User)
 
 	'''Nos ayudara a visualizar mejor en shell'''
 	def __str__(self):

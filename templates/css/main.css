@@ -4,8 +4,8 @@
    /*Definimos las dimensiones de los mapas, afecta a la pagina principal y a la de 
     registro de comercios, para alterar la de registro usar el id #mapa*/
     .mapa {
-        width: 500px;
-        height: 400px;
+        width: 400px;
+        height: 300px;
     }
 
     div.error {
@@ -44,7 +44,7 @@
    vertical-align: middle;
    min-width:300px;
    padding:20px;
-   width:400px;
+   width:500px;
    }
 
 .form-title {
