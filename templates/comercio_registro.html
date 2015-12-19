@@ -5,23 +5,18 @@
 <script src="{% static 'templates/js/mapa.js' %}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 
-<center>
+
 <h1>Registra tu comercio</h1>
+<center>
 <form id="comercio_form" class="form-container" method="post" name="comercio_form" enctype="multipart/form-data">
 	{% csrf_token %}
-
+	<div class="form-title"><h2>Escribe la información de tu comercio</h2></div><br />
 	<div class = "form-group form-title">
 		{{ form.non_field_errors }}
 
 		<div class = "fieldWrapper">
-			{{ form.clave.errors }}
-			<label for="{{ form.clave.id_for_label }}">Clave de registro</label>
-			{{form.clave}}
-		</div>
-
-		<div class = "fieldWrapper">
 			{{ form.nombre.errors }}
-			<label for="{{ form.nombre.id_for_label }}">Nombre</label>
+			<label for="{{ form.nombre.id_for_label }}">Nombre </label>
 			{{form.nombre}}
 		</div>
 
@@ -58,6 +53,7 @@
 		<div class = "fieldWrapper">
 			{{ form.descripcion.errors }}
 			<label for="{{ form.descripcion.id_for_label}}">Descripción</label>
+			<br />
 			{{ form.descripcion }}
 		</div>
 		<p><b>Coloca el marcador en la posicion del comercio</b></p>
@@ -71,6 +67,7 @@
 			<label for="{{ form.longitud.id_for_label }}">Longitud</label>
 			{{form.longitud}}
 		</div>
+		<br />
 		<div id="mapa" class="mapa"></div>
 
 	</div> <!-- form-group -->

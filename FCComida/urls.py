@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^logout/$', 'perfiles.views.user_logout', name='logout'),
     url(r'^comercio-registro/$', 'comercio.views.registro', name='registro'),
     url(r'^comercio-registrado/$', 'comercio.views.exito', name='exito'),
+    url(r'^comercio/(?P<pk>\d+)/$', 'comercio.views.detalles_comercio'),
 ]
