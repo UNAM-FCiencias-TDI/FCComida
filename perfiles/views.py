@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from .forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login, logout
@@ -7,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.core.mail import send_mail
 
 def register(request):
 
@@ -44,6 +47,10 @@ def register(request):
 
             # Now we save the UserProfile model instance.
             profile.save()
+
+            # Sending email
+            mess = 'Hola ' + user.username + '!\n' + 'Has sido registrado satisfactoriamente en FCComida\n\n Inicia sesion en: \nhttp://localhost:8000/login/'
+            send_mail('¡Bienvenido a FCComida!' ,mess, 'fcienciascomida@gmail.com',[user.email],fail_silently=False)
 
             # Update our variable to tell the template registration was successful.
             registered = True
