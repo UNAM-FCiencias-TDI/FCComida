@@ -10,4 +10,3 @@ def inicio(request):
 def perfiles(request):
     return render(request, 'home.html')
 
-

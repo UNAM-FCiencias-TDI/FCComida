@@ -10,8 +10,7 @@ from comercio.models import Comercio
 def registro(request):
 	# recibimos los datos por post
 	if request.method == 'POST':
-		#user = request.user
-		#initial = {'user_id': user}
+		
 		form = ComercioForm(request.POST,request.FILES)
 
 		if form.is_valid():
@@ -19,10 +18,12 @@ def registro(request):
 			# Vemos si se adjunto alguna foto del comercio
 			if 'foto' in request.FILES:
 				form.foto = request.FILES['foto']
+			# Guardamos la informacion obtenida del formulario
+			comercio = form.save(commit=False)
+			# Asignamos el usuario logueado al comercio
+			comercio.user = request.user
 			# Guardamos el comercio en la base de datos
-			form.save()
-			#Esta linea y la anterior estaban mal identadas
-			#Por eso moria con datos invalidos
+			comercio.save()
 			return redirect('comercio.views.exito')
 		#Imprime los errores en el formulario
 		else: 
