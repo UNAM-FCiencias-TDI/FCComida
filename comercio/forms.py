@@ -5,6 +5,7 @@ from .models import Comercio
 class ComercioForm(forms.ModelForm):
 	class Meta:
 		model = Comercio
+		exclude = ('user',)
 		fields = ('comedor','facultad','nombre',
 			'foto','mayor_precio','menor_precio','descripcion','latitud','longitud',)
 		widgets = {

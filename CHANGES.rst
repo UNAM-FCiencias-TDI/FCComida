@@ -45,3 +45,9 @@ Changelog
 
 - Validaciones y unas correciones
   [moi5]
+
+- Página de exito al registrar comercios
+  [clapas]
+  
+- Página individual de comercios
+  [jealuna]

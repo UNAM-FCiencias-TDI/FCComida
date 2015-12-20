@@ -52,7 +52,7 @@ class Comercio(models.Model):
 	descripcion = models.CharField(max_length=200, default='') # descripcion sobre el comercio
 	#Se agrega el usuario y la fecha en la que lo registro
 	fecha = models.DateTimeField(auto_now_add = True)
-	#user = models.ForeignKey(User)
+	user = models.ForeignKey(User)
 
 	'''Nos ayudara a visualizar mejor en shell'''
 	def __str__(self):

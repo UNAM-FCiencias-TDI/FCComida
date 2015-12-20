@@ -6,6 +6,7 @@
 
 <article>
     <h1> {{ comercio.nombre }} </h1>
+    <p> Publicado por <strong>{{ comercio.user }}</strong> el {{ comercio.fecha }}</p>
     <p>{{ comercio.descripcion }}</p>
     <img src="../../static/{{ comercio.foto }}" width="540" height="400"/>
     {% if comercio.comedor %}

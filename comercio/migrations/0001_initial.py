@@ -2,12 +2,14 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
+from django.conf import settings
 import django.core.validators
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
@@ -26,6 +28,7 @@ class Migration(migrations.Migration):
                 ('menor_precio', models.FloatField(default=0.5, validators=[django.core.validators.MinValueValidator(0.5)])),
                 ('descripcion', models.CharField(default=b'', max_length=200)),
                 ('fecha', models.DateTimeField(auto_now_add=True)),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]
