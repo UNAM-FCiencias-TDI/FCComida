@@ -27,7 +27,28 @@
         initialize(lat,lng,id,nombre)
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-
 </article>
-
+{% if user.is_authenticated %}
+<article>
+    <center>
+        <form id="comentario_form" class="" method="post" action="/comentario/">
+            <div class="form-title"><h3>Escribe tu comentario</h3></div>
+            {% csrf_token %}
+            <input type="hidden" name="comercioId" size="35" value="{{comercio.id}}"/>
+            <br/>
+            <label>Comentario: </label>
+            <br />
+            <textarea name="comentario" rows="10" cols="60"></textarea>
+            <br/>
+            <br/>
+            <button type="submit" class="btn btn-success" value="succes">Comentar</button>
+        </form>
+    </center>
+</article>
+{% endif %}
+<br />
+{% for comentario in comentarios%}
+<p> <strong>El {{ comentario.fecha }} {{ comentario.usuarioId }} dijo : </strong></p>
+<p>{{comentario.comentario}}</p>
+{% endfor %}
 {% endblock %}

@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import ComercioForm
 from django.contrib.auth.decorators import login_required
 from comercio.models import Comercio
+from comentarios.models import Comentario
 # Create your views here.
 
 # Creamos la vista para registrar un comercio, solo usuarios con sesion iniciada
@@ -36,11 +37,17 @@ def registro(request):
 
 # Creamos una vista de exito a alguna accion, este HTML no existe
 def exito(request):
+	print request
 	return render(request, 'exito.html')
 
 def detalles_comercio(request, pk):
     detalles = Comercio.objects.get(pk=pk)
-    return render(request, 'detalles_comercio.html', {'comercio': detalles})
+    #Obtenemos los comentarios que tengan el comercio como clave foranea
+    try:
+    	comentarios = Comentario.objects.filter(comercioId=pk)
+    except Comentario.DoesNotExist:
+    	comentarios = None
+    return render(request, 'detalles_comercio.html', {'comercio': detalles, 'comentarios':comentarios})
 
 
 
