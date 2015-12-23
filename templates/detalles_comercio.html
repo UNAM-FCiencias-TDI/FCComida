@@ -29,6 +29,22 @@
     </script>
 </article>
 {% if user.is_authenticated %}
+<form id="califica_form" class="" method="post" action="/califica/">
+    <div class="form-title"><h3>Califica este comercio</h3></div>
+    {% csrf_token %}
+    <input type="hidden" name="comercioId" size="35" value="{{comercio.id}}"/>
+    <input type="radio" name="rating" value="1" /> 1 estrella
+    <br />
+    <input type="radio" name="rating" value="2" /> 2 estrellas
+    <br />
+    <input type="radio" name="rating" value="3" /> 3 estrellas
+    <br />
+    <input type="radio" name="rating" value="4" /> 4 estrellas
+    <br />
+    <input type="radio" name="rating" value="5" checked/> 5 estrellas
+    <br />
+    <button type="submit" class="btn btn-success" value="succes">Calificar</button>
+</form> 
 <article>
     <center>
         <form id="comentario_form" class="" method="post" action="/comentario/">
@@ -49,6 +65,6 @@
 <br />
 {% for comentario in comentarios%}
 <p> <strong>El {{ comentario.fecha }} {{ comentario.usuarioId }} dijo : </strong></p>
-<p>{{comentario.comentario}}</p>
+<p style="white-space: pre-wrap;">{{comentario.comentario}}</p>
 {% endfor %}
 {% endblock %}
