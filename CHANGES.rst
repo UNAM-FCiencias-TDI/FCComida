@@ -51,3 +51,6 @@ Changelog
   
 - Página individual de comercios
   [jealuna]
+  
+- Sistema de comentarios
+  [jealuna]
