@@ -32,8 +32,11 @@ def Calificaciones(request):
 		califica = request.POST.get('rating')
 		usuarioId = request.user
 		comercioId = Comercio.objects.get(id=comercio)
-		calif = Califica.objects.create(califica=califica,comercioId=comercioId,usuarioId=usuarioId)
-		calif.save()
+		valores_actualiza = {'califica':califica}
+		#Si el usuario no ha calificado ese comercio se crea una nueva entrada en la base,
+		#si ya lo califico solo se actualiza su puntuacion, esto evita calificar multiples veces
+		calif, created = Califica.objects.update_or_create(
+			comercioId=comercioId,usuarioId=usuarioId,defaults=valores_actualiza)
 		#obtenemos el conjunto de calificaciones del comericio
 		prom = Califica.objects.filter(comercioId=comercioId)
 		#calculamos el promedio y lo guardamos como entero
