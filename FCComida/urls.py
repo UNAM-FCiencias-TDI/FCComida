@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^comercio-registrado/$', 'comercio.views.exito', name='exito'),
     url(r'^comercio/(?P<pk>\d+)/$', 'comercio.views.detalles_comercio'),
     url(r'^comentario/$', 'comentarios.views.Comentarios', name='comentario'),
+    url(r'^califica/$', 'comentarios.views.Calificaciones', name='califica'),
 ]
