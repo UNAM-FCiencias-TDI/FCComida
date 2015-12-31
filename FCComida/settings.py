@@ -39,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'comercio',
     'comentarios',
-    'perfiles'
+    'perfiles',
+    #Busqueda
+    'haystack',
 
 )
 
@@ -137,3 +139,13 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'fcienciascomida@gmail.com'
 EMAIL_HOST_PASSWORD = 'fciencias12345'
+
+#Busqueda
+HAYSTACK_CONNECTIONS = {
+    'default': {
+    'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine', 
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
+}
+#Actualiza el indice al guardar
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
