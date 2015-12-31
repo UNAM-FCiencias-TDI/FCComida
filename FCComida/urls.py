@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^comercio/(?P<pk>\d+)/$', 'comercio.views.detalles_comercio'),
     url(r'^comentario/$', 'comentarios.views.Comentarios', name='comentario'),
     url(r'^califica/$', 'comentarios.views.Calificaciones', name='califica'),
+    url(r'^busqueda/', include('haystack.urls')),
 ]

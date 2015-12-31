@@ -93,4 +93,10 @@ Changelog
 
 - Ahora el usuario sólo puede calificar una vez por comercio 
   [jealuna]
+
+0.5.0 (unreleased)
+------------------
+
+- Se agrega sistema de búsqueda
+  [jealuna]  
   

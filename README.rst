@@ -16,6 +16,7 @@ Instalación
     $ source bin/activate
     (FCComida)$ git clone https://github.com/UNAM-FCiencias-TDI/FCComida.git
     (FCComida)$ cd FCComida
+    (FCComida)$ ./django_stack.sh
     (FCComida)$ pip install -r requirements.txt
 
 
@@ -34,4 +35,5 @@ Ejecución
 
     (FCComida)$ python manage.py migrate
     (FCComida)$ python manage.py createsuperuser
+    (FCComida)$ python manage.py rebuild_index
     (FCComida)$ python manage.py runserver

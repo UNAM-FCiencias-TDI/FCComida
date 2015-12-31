@@ -21,7 +21,6 @@
         </style>
         <link rel="stylesheet" href="{% static 'templates/css/bootstrap-theme.min.css' %}">
         <link rel="stylesheet" href="{% static 'templates/css/main.css' %}">
-        <link rel="stylesheet" href="{% static 'templates/css/registro.css' %}">
         <script src="{% static 'templates/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
         {% block extra_head %}
         {% endblock %}
@@ -41,18 +40,30 @@
           </button>
           <a class="navbar-brand" href="/">FCComida</a>
         </div>
+
         <!-- Campo para login-->
-        {% if user.is_authenticated %}
+        
         <div id="navbar" class="navbar-collapse collapse">
+        <!--Campo de busqueda-->
+        <div class="col-xs-6 col-sm-4">
+        <form class="navbar-form" role="search" action="/busqueda/" method="get">
+          {% csrf_token %}
+          <div class="input-group">
+           <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <input type="text" class="form-control" placeholder="Busca" name="q" id="id_q">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+        {% if user.is_authenticated %}
           <form class="navbar-form navbar-right" role="form" action="/logout/">
             <a href="/comercio-registro/" class="btn btn-primary" role="button">Registrar un comercio</a>
             <button type="submit" class="btn btn-danger">Salir</button>
-          </form> 
-        </div>
-        {% else %}
-        {% block login %}
-                    
-        <div id="navbar" class="navbar-collapse collapse">
+          </form>
+          {% else %}
+          {% block login %}
           <form id="login_form_bootstrap" novalidate="novalidate" class="navbar-form navbar-right" role="form" action="/login/" method="post">
             {% csrf_token %}
             <div class=" form-content form-group">
@@ -65,9 +76,9 @@
                 <a href="/register/" class="btn btn-primary" role="button">Registrarse</a><br>
                 <a href="/">¿Olvidaste tu contraseña?</a>
           </form> 
-        </div><!--/.navbar-collapse -->
         {% endblock %}
         {% endif %}
+        </div> <!--/.navbar-collapse -->   
       </div>
     </nav>
 
