@@ -11,14 +11,14 @@
             {% csrf_token %}
             <label>Nombre de usuario: </label>
             <br />
-            <input type="text" name="username" value="" size="35" />
+            <input id='id_user' type="text" name="username" value="" size="35" />
             <br/>
             <label>Contraseña: </label>
             <br />
-            <input type="password" name="password" value="" size="35" />
+            <input id='id_pass' type="password" name="password" value="" size="35" />
             <br/>
             <br/>
-            <button type="submit" class="btn btn-success" value="succes">Ingresar</button>
+            <button id="entrar" type="submit" class="btn btn-success" value="succes">Ingresar</button>
         </form>
 </center>
 {% endblock %}
