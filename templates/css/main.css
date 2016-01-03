@@ -2,29 +2,29 @@
    Author's custom styles
    ========================================================================== */
    /*Definimos las dimensiones de los mapas, afecta a la pagina principal y a la de 
-    registro de comercios, para alterar la de registro usar el id #mapa*/
-    .mapa {
-        width: 400px;
-        height: 300px;
-    }
+   registro de comercios, para alterar la de registro usar el id #mapa*/
+   .mapa {
+    width: 400px;
+    height: 300px;
+  }
 
-    div.error {
-	position:absolute;
-        margin-top:-21px;
-	margin-left:150px;
-	border:2px solid #C0C097;
-        background-color:#fff;
-        color:white;
-        padding:3px;
-        text-align:left;
-        z-index:1;
-        color:#333333;
-	font:100% arial,helvetica,clean,sans-serif;
-	font-size:15px;
-	font-weight:bold;  
-    }
+  div.error {
+   position:absolute;
+   margin-top:-21px;
+   margin-left:150px;
+   border:2px solid #C0C097;
+   background-color:#fff;
+   color:white;
+   padding:3px;
+   text-align:left;
+   z-index:1;
+   color:#333333;
+   font:100% arial,helvetica,clean,sans-serif;
+   font-size:15px;
+   font-weight:bold;  
+ }
 
-.form-container {
+ .form-container {
    border: 1px solid #186659;
    background: #ffffff;
    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
@@ -45,10 +45,38 @@
    min-width:300px;
    padding:20px;
    width:500px;
-   }
+ }
 
-.form-title {
+ .form-title {
    margin-bottom:10px;
    color: #040808;
    text-shadow: #f7f7f7 0 1px 0;
-   }
+ }
+
+ .expand {
+  height: 2em;
+  width: 50%;
+  padding: 3px;
+}
+
+.comenta {
+  padding-bottom: 10px;
+}
+.comenta img {
+  display: inline-block;
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+}
+.comenta .contenido {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.commentsection {
+  padding: 30px 60px;
+  width: 100%;
+}
