@@ -3,6 +3,8 @@ from .forms import ComercioForm
 from django.contrib.auth.decorators import login_required
 from comercio.models import Comercio
 from comentarios.models import Comentario
+from django.contrib.auth.models import User
+from perfiles.models import UserProfile
 # Create your views here.
 
 # Creamos la vista para registrar un comercio, solo usuarios con sesion iniciada
@@ -45,9 +47,17 @@ def detalles_comercio(request, pk):
     #Obtenemos los comentarios que tengan el comercio como clave foranea
     try:
     	comentarios = Comentario.objects.filter(comercioId=pk)
+    	print comentarios
+    	perfiles = []
+    	for comenta in comentarios:
+    		perfiles.append(UserProfile.objects.get(pk=comenta.usuarioId.pk).picture)
+    	print perfiles
+    	print len(perfiles)
+    	print len(comentarios)
+    	comentarios = zip(comentarios, perfiles)
     except Comentario.DoesNotExist:
     	comentarios = None
-    return render(request, 'detalles_comercio.html', {'comercio': detalles, 'comentarios':comentarios})
+    return render(request, 'detalles_comercio.html', {'comercio': detalles, 'comentarios':comentarios,})
 
 
 
