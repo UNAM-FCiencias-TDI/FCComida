@@ -52,9 +52,8 @@
             {% csrf_token %}
             <input type="hidden" name="comercioId" size="35" value="{{comercio.id}}"/>
             <br/>
-            <label>Comentario: </label>
             <br />
-            <textarea name="comentario" rows="10" cols="60"></textarea>
+            <textarea name="comentario" class="expand" rows="2" cols="50" placeholder="Deja tu comentario"></textarea>
             <br/>
             <br/>
             <button type="submit" class="btn btn-success" value="succes">Comentar</button>
@@ -63,8 +62,20 @@
 </article>
 {% endif %}
 <br />
-{% for comentario in comentarios%}
-<p> <strong>El {{ comentario.fecha }} {{ comentario.usuarioId }} dijo : </strong></p>
-<p style="white-space: pre-wrap;">{{comentario.comentario}}</p>
+{% for comentario, perfil in comentarios%}
+<section class="commentsection">
+<div class='comenta'>
+    {% ifnotequal perfil "" %}
+    <img src="../../static/{{perfil}}"/>
+    {% else %}
+        <img src="../../static/profile_images/but.jpg" />
+        {% endifnotequal %}
+        <div class="contenido">
+        <h5> {{ comentario.usuarioId }} <div class= "contenido" style="color:DimGray">{{ comentario.fecha|date:"d M, Y H:m" }}</div> : </h5>
+        <p style="white-space: pre-wrap;">{{comentario.comentario}}</p>
+    </div>
+</div>
+</section>
 {% endfor %}
+<script src="{% static 'templates/js/expande.js' %}"></script>
 {% endblock %}

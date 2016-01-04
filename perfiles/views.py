@@ -5,11 +5,14 @@ from .forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.core.mail import send_mail
+
+from validate_email import validate_email
 
 def register(request):
 
@@ -126,3 +129,22 @@ def user_logout(request):
 
     # Take the user back to the homepage.
     return HttpResponseRedirect('/')
+
+def recupera_pass(request):
+
+    enviado = False
+    if request.method == 'POST':
+        #recupera_pass_form = RecuperaPasswordForm(data=request.POST)
+        email = request.POST.get('email')
+
+        if validate_email(email):   
+            if User.objects.filter(email=email):
+                user = User.objects.get(email=email)
+                password = User.objects.make_random_password()
+                user.set_password(password)
+                user.save()
+                mensaje = "Hola "+user.username+"!\nTu password es "+ password
+                send_mail('Cambio de password FCComida' ,mensaje, 'fcienciascomida@gmail.com',[email],fail_silently=False)
+                enviado = True
+
+    return render(request,'recupera.html',{'enviado':enviado})

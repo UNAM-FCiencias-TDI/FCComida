@@ -22,6 +22,9 @@ script:
  -  coverage run manage.py test
  -  python functional_tests/fccomida_test.py
  -  python functional_tests/registro.py
+ -  python functional_tests/login.py
+ -  python functional_tests/comercio.py
+ -  python functional_tests/comentar.py
 
 after_script:
  - coveralls
