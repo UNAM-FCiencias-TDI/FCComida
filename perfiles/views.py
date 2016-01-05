@@ -49,6 +49,7 @@ def register(request):
                 profile.picture = request.FILES['picture']
 
             # Now we save the UserProfile model instance.
+            user.is_active = False
             profile.save()
 
             # Sending email

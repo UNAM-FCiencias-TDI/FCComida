@@ -41,10 +41,3 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('facultad', 'picture')
-
-"""
-class RecuperaPasswordForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ('email',)
-"""
