@@ -98,5 +98,16 @@ Changelog
 ------------------
 
 - Se agrega sistema de búsqueda
-  [jealuna]  
+  [jealuna]
   
+0.6.0 (unreleased)
+------------------
+
+- Recuperacion de contraseña
+  [mike-gaspar]
+  
+0.6.1 (unreleased)
+------------------
+
+- Calificación con estrellas
+  [jealuna]
