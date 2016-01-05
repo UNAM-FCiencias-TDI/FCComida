@@ -3,6 +3,8 @@
 {% block content %}
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="{% static 'templates/js/muestra_mapa.js' %}"></script>
+<script src="{% static 'templates/js/vendor/jquery.rating.js' %}"></script>
+<link rel="stylesheet" href="{% static 'templates/css/jquery.rating.css' %}">
 
 <article>
     <h1> {{ comercio.nombre }} </h1>
@@ -14,11 +16,22 @@
     	{% else %}
     		<p>Este comercio no cuenta con un comedor</p>
     {% endif %}
-    <p>Calificación : {{ comercio.calificacion }}</p>
+    <p>Calificación : {{comercio.calificacion }}
+    <input id="estrella_1" type="radio" name="rating" value="1" class="star" disabled="disabled"/> 
+    <input id="estrella_2" type="radio" name="rating" value="2" class="star" disabled="disabled"/> 
+    <input id="estrella_3" type="radio" name="rating" value="3" class="star" disabled="disabled"/>
+    <input id="estrella_4" type="radio" name="rating" value="4" class="star" disabled="disabled"/> 
+    <input id="estrella_5" type="radio" name="rating" value="5" class="star" disabled="disabled"/>
+    </p>
     <p>Precios entre : {{ comercio.mayor_precio }} y {{ comercio.menor_precio }}</p>
     <p>{{ comercio.facultad }}</p>
     <p><strong>{{ comercio.nombre }} se ubica en : </strong></strong></p>    
     <div id="{{ comercio.id }}" class="mapa"></div>
+   <script>
+        var calif = {{comercio.calificacion }}
+        var estrella = "estrella_".concat(calif);
+        document.getElementById(estrella).checked = true;
+   </script>
     <script>
         var lat = {{ comercio.latitud }}
         var lng = {{ comercio.longitud }}
@@ -33,16 +46,11 @@
     <div class="form-title"><h3>Califica este comercio</h3></div>
     {% csrf_token %}
     <input type="hidden" name="comercioId" size="35" value="{{comercio.id}}"/>
-    <input type="radio" name="rating" value="1" /> 1 estrella
-    <br />
-    <input type="radio" name="rating" value="2" /> 2 estrellas
-    <br />
-    <input type="radio" name="rating" value="3" /> 3 estrellas
-    <br />
-    <input type="radio" name="rating" value="4" /> 4 estrellas
-    <br />
-    <input type="radio" name="rating" value="5" checked/> 5 estrellas
-    <br />
+    <input type="radio" name="rating" value="1" class="star"/> 
+    <input type="radio" name="rating" value="2" class="star"/> 
+    <input type="radio" name="rating" value="3" class="star"/>
+    <input type="radio" name="rating" value="4" class="star"/> 
+    <input type="radio" name="rating" value="5" class="star" />
     <button type="submit" class="btn btn-success" value="succes">Calificar</button>
 </form> 
 <article>
