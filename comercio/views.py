@@ -47,13 +47,9 @@ def detalles_comercio(request, pk):
     #Obtenemos los comentarios que tengan el comercio como clave foranea
     try:
     	comentarios = Comentario.objects.filter(comercioId=pk)
-    	print comentarios
     	perfiles = []
     	for comenta in comentarios:
     		perfiles.append(UserProfile.objects.get(pk=comenta.usuarioId.pk).picture)
-    	print perfiles
-    	print len(perfiles)
-    	print len(comentarios)
     	comentarios = zip(comentarios, perfiles)
     except Comentario.DoesNotExist:
     	comentarios = None
