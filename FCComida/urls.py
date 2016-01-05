@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^register/$', 'perfiles.views.register', name='register'),
     url(r'^login/$', 'perfiles.views.user_login', name='login'),
     url(r'^logout/$', 'perfiles.views.user_logout', name='logout'),
+    url(r'^recupera-password/$', 'perfiles.views.recupera_pass', name='recupera-password'),
     url(r'^comercio-registro/$', 'comercio.views.registro', name='registro'),
     url(r'^comercio-registrado/$', 'comercio.views.exito', name='exito'),
     url(r'^comercio/(?P<pk>\d+)/$', 'comercio.views.detalles_comercio'),
